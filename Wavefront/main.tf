@@ -5,7 +5,7 @@ provider "wavefront" {
 }
 
 resource "wavefront_alert" "test_alert_by_tf_from_vince" {
-  name                   = "High CPU Alert"
+  name                   = "High CPU AlertV2"
   condition              = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80"
   additional_information = "This is an Alert"
   display_expression     = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )"
