@@ -6,3 +6,8 @@ variable "nwname" {
   description = "Network Name"
   default     = "testNw"
 }
+
+variable "subnetname" {
+  description = "Subnet Name"
+  default     = "TestSubnet"
+}
