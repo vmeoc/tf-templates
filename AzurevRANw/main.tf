@@ -27,7 +27,7 @@ resource "azurerm_subnet" "example" {
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefix     = "10.0.1.0/24"
 }
-provider vra {
+provider "vra" {
   url           = var.url
   refresh_token = var.refresh_token
 }
