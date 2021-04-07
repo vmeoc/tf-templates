@@ -12,3 +12,7 @@ variable "region" {
 
 variable "subnet_name_1" {
 }
+
+variable "nwprofile" {
+}
+

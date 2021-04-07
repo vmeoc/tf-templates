@@ -17,7 +17,7 @@ data "vra_fabric_network" "subnet_1" {
 }
 
 resource "vra_network_profile" "simple" {
-  name        = "no-isolation"
+  name        = var.nwprofile
   description = "Simple Network Profile with no isolation."
   region_id   = data.vra_region.this.id
 
