@@ -89,15 +89,11 @@ resource "azurerm_virtual_machine" "main" {
   }
   zones = "${var.zone}"
 }
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
-}
 
 resource "azurerm_managed_disk" "example" {
   name                 = "acctestmd"
   location             = "West US 2"
-  resource_group_name  = azurerm_resource_group.example.name
+  resource_group_name  = azurerm_resource_group.main.name
   storage_account_type = "Standard_LRS"
   create_option        = "Empty"
   disk_size_gb         = "15"
