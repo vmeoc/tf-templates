@@ -10,8 +10,18 @@ variable "prefix" {
   default = "tfvmex"
 }
 
+variable "vmname" {
+  default = "thisisatempnameforvm"
+}
+
+variable "rgname" {
+  default = "thisisatempnameforrg"
+}
+
+
+
 resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-resources"
+  name     = "${var.rgname}"
   location = "West Europe"
 }
 
@@ -42,7 +52,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
-  name                  = "${var.prefix}-vm"
+  name                  = "${var.vmname}"
   location              = azurerm_resource_group.main.location
   resource_group_name   = azurerm_resource_group.main.name
   network_interface_ids = [azurerm_network_interface.main.id]
