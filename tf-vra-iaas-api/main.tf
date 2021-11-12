@@ -38,8 +38,8 @@ resource "vra_machine" "this" {
   image       = "CentosV7"
   flavor      = "small"
   custom_properties {
-    "example": "{\"customizationSpec\": \"Linux\"}"
-}
+    "customizationSpec" = "Linux"   
+  }
   boot_config {
     content = <<EOF
 #cloud-config
@@ -60,7 +60,10 @@ EOF
 
   nics {
     network_id = data.vra_network.this.id
-#    assignment = "static"
+    custom_properties {
+      "assignment" = "static"
+  }
+
   }
 
 #  constraints {
