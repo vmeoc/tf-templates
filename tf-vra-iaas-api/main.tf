@@ -38,7 +38,7 @@ resource "vra_machine" "this" {
   image       = "CentosV7"
   flavor      = "small"
   custom_properties {
-    "customizationSpec" = "Linux"   
+    customizationSpec = "Linux"   
   }
   boot_config {
     content = <<EOF
@@ -61,7 +61,7 @@ EOF
   nics {
     network_id = data.vra_network.this.id
     custom_properties {
-      "assignment" = "static"
+      assignment = "static"
   }
 
   }

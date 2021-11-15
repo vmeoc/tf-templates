@@ -10,6 +10,7 @@ data "vra_machine" "this" {
 
 data "vra_network" "this" {
   name = var.network_name
+#  id = var.network_id
 }
 
 data "vra_project" "this" {
@@ -17,7 +18,7 @@ data "vra_project" "this" {
 }
 
 resource "vra_load_balancer" "my_load_balancer" {
-    name = "my-lb-%d"
+    name = "my-lb"
     project_id = data.vra_project.this.id
     description = "load balancer description"
 

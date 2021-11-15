@@ -1,6 +1,10 @@
 variable "refresh_token" {
 }
 
+variable "version" {
+}
+
+
 variable "url" {
 }
 
@@ -26,6 +30,10 @@ variable "image_name" {
 }
 
 variable "network_name" {
+
+}
+
+variable "network_id" {
 
 }
 
