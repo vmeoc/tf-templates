@@ -37,7 +37,7 @@ resource "vra_machine" "this" {
   project_id  = data.vra_project.this.id
   image       = "CentosV7"
   flavor      = "small"
-  custom_properties {
+  custom_properties = {
     customizationSpec = "Linux"   
   }
   boot_config {
@@ -60,8 +60,8 @@ EOF
 
   nics {
     network_id = data.vra_network.this.id
-    custom_properties {
-      assignment = "static"
+    custom_properties = {
+      ipAssignmentType = "static"
   }
 
   }
@@ -79,6 +79,10 @@ EOF
 #  disks {
 #    block_device_id = vra_block_device.disk1.id
 #  }
+
+  timeouts {
+    create = "20m"
+  }
 
 }
 
