@@ -1,9 +1,6 @@
 variable "refresh_token" {
 }
 
-variable "version" {
-}
-
 
 variable "url" {
 }

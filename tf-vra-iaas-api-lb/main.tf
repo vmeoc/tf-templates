@@ -10,7 +10,7 @@ data "vra_machine" "this" {
 
 data "vra_network" "this" {
   name = var.network_name
-#  id = var.network_id
+  id = var.network_id
 }
 
 data "vra_project" "this" {
